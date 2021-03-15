@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Loop.ke</string>
+    <string name="welcome">Welcome</string>
+    <string name="easiest_way_to_be_on_the_loop">Easiest Way To Be on The Loop</string>
+    <string name="login">Login</string>
+    <string name="register1">Register</string>
+    <string name="terms_of_service">Terms of service</string>
+    <string name="register_now_free">Register now free</string>
+    <string name="your_name">Your name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="repeat_password">Repeat password</string>
+    <string name="register2">Register</string>
+</resources>
