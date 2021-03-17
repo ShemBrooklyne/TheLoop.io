@@ -11,4 +11,7 @@
     <string name="password">Password</string>
     <string name="repeat_password">Repeat password</string>
     <string name="register2">Register</string>
+    <string name="lorem_ipsum">lorem_ipsum</string>
+    <string name="UnsuccessfulMsg">Something went wrong. Please try again later</string>
+    <string name="FailMsg">Something went wrong. Please check your Internet connection and try again later</string>
 </resources>
