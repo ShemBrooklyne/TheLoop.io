@@ -49,7 +49,7 @@ public class NewsList extends AppCompatActivity {
         //Establishing Connection to the Model classes.
         NewsApi client = NewsClient.getClient();
 
-        Call<SearchResponse> call = client.getNews("standardmedia.co.ke", "441e5fea5c6d4f29bee20f551a8cc836");
+        Call<SearchResponse> call = client.getNews("standardmedia.co.ke", "441e5fea5c6d4f29bee20f551a8cc836", 100);
         call.enqueue(new Callback<SearchResponse>() {
             @Override
             public void onResponse(@NotNull Call<SearchResponse> call, @NotNull Response<SearchResponse> response) {

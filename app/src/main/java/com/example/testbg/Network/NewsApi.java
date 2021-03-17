@@ -10,7 +10,8 @@ public interface NewsApi {
     @GET("everything")
     Call<SearchResponse> getNews(
             @Query("domains") String domains,
-            @Query("apiKey") String apiKey
+            @Query("apiKey") String apiKey,
+            @Query("pageSize") int pageSize
     );
 }
 
