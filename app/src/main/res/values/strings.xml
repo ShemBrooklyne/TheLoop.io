@@ -14,4 +14,5 @@
     <string name="lorem_ipsum">lorem_ipsum</string>
     <string name="UnsuccessfulMsg">Something went wrong. Please try again later</string>
     <string name="FailMsg">Something went wrong. Please check your Internet connection and try again later</string>
+    <string name="author_placeholder">Shem Brooklyne</string>
 </resources>
