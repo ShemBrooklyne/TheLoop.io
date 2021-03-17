@@ -27,4 +27,21 @@ public class NewsClient {
                 .build();
         return retrofit.create(NewsApi.class);
     }
+
+//    public static TechApi getClient2() {
+//        OkHttpClient.Builder okHttpClient = new OkHttpClient.Builder();
+//        if (retrofit == null) {
+//            HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
+//            httpLoggingInterceptor.level(HttpLoggingInterceptor.Level.BODY);
+//            okHttpClient.addInterceptor(httpLoggingInterceptor);
+//            okHttpClient.build();
+//        }
+//        retrofit = new Retrofit
+//                .Builder()
+//                .baseUrl(LOOP_BASE_URL)
+//                .client(okHttpClient.build())
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
+//        return retrofit.create(TechApi.class);
+//    }
 }

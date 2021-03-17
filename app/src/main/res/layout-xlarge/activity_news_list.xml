@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:background="@color/white"
     android:orientation="horizontal"
-    tools:context=".NewsList">
+    tools:context=".UI.KenyanNews">
 
     <LinearLayout
         android:layout_width="match_parent"

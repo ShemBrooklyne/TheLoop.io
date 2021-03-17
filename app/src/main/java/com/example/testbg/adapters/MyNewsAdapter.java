@@ -1,5 +1,6 @@
-package com.example.testbg;
+package com.example.testbg.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,15 +11,18 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.testbg.R;
 import com.example.testbg.models.Article;
 import com.squareup.picasso.Picasso;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class MyNewsAdapter extends RecyclerView.Adapter<MyNewsAdapter.ViewHolder> {
 
     private List<Article> articles;
     private Context mContext;
@@ -29,8 +33,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
      */
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
+        @SuppressLint("NonConstantResourceId")
         @BindView(R.id.Headlines) TextView headlines;
+        @SuppressLint("NonConstantResourceId")
         @BindView(R.id.newsImg) ImageView newsimage;
+        @SuppressLint("NonConstantResourceId")
         @BindView(R.id.author) TextView author;
 
         public ViewHolder(View view) {
@@ -54,12 +61,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
      * @param mArticles List<Article> containing the data to populate views to be used
      * by RecyclerView.
      */
-    public MyAdapter(Context context, List<Article> mArticles) {
+    public MyNewsAdapter(Context context, List<Article> mArticles) {
         mContext = context;
         articles = mArticles;
     }
 
     // Create new views (invoked by the layout manager)
+    @NotNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         // Create a new view, which defines the UI of the list item

@@ -1,15 +1,14 @@
-package com.example.testbg;
+package com.example.testbg.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
-import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.testbg.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -19,6 +18,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.register) Button mRegister;
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.loginbtn) Button mLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +34,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        }
 
         mRegister.setOnClickListener(this);
+        mLogin.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         if (view == mRegister) {
-            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            Intent intent = new Intent(MainActivity.this, TechNews.class);
+            startActivity(intent);
+        }
+
+        if (view == mLogin) {
+            Intent intent = new Intent(MainActivity.this, KenyanNews.class);
             startActivity(intent);
         }
     }

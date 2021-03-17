@@ -1,8 +1,4 @@
-package com.example.testbg;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+package com.example.testbg.UI;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -10,8 +6,14 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.testbg.Network.NewsApi;
 import com.example.testbg.Network.NewsClient;
+import com.example.testbg.R;
+import com.example.testbg.adapters.MyNewsAdapter;
 import com.example.testbg.models.Article;
 import com.example.testbg.models.SearchResponse;
 
@@ -25,17 +27,20 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class NewsList extends AppCompatActivity {
+public class WorldNews extends AppCompatActivity {
 
-    private MyAdapter myAdapter;
+    private MyNewsAdapter myNewsAdapter;
     public List<Article> articles;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.recyclerView) RecyclerView mRecyclerview;
+    @BindView(R.id.recyclerView)
+    RecyclerView mRecyclerview;
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.errorTextView) TextView mErrorTextView;
+    @BindView(R.id.errorTextView)
+    TextView mErrorTextView;
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.progressBar) ProgressBar mProgressBar;
+    @BindView(R.id.progressBar)
+    ProgressBar mProgressBar;
 
 
 
@@ -49,16 +54,16 @@ public class NewsList extends AppCompatActivity {
         //Establishing Connection to the Model classes.
         NewsApi client = NewsClient.getClient();
 
-        Call<SearchResponse> call = client.getNews("standardmedia.co.ke", "441e5fea5c6d4f29bee20f551a8cc836", 100);
+        Call<SearchResponse> call = client.getNews("bbc.co.uk", "441e5fea5c6d4f29bee20f551a8cc836", 100);
         call.enqueue(new Callback<SearchResponse>() {
             @Override
             public void onResponse(@NotNull Call<SearchResponse> call, @NotNull Response<SearchResponse> response) {
                 if (response.isSuccessful()) {
                     hideProgressBar();
                     articles = response.body().getArticles();
-                    myAdapter = new MyAdapter(NewsList.this, articles);
-                    mRecyclerview.setAdapter(myAdapter);
-                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(NewsList.this);
+                    myNewsAdapter = new MyNewsAdapter(WorldNews.this, articles);
+                    mRecyclerview.setAdapter(myNewsAdapter);
+                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(WorldNews.this);
                     mRecyclerview.setLayoutManager(layoutManager);
                     mRecyclerview.setHasFixedSize(true);
                     showArticles();
@@ -93,4 +98,5 @@ public class NewsList extends AppCompatActivity {
     private void showArticles() {
         mRecyclerview.setVisibility(View.VISIBLE);
     }
+
 }

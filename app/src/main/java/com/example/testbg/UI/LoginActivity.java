@@ -1,4 +1,4 @@
-package com.example.testbg;
+package com.example.testbg.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.testbg.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,7 +28,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
         if (view == mRegister2) {
-            Intent intent = new Intent(LoginActivity.this, NewsList.class);
+            Intent intent = new Intent(LoginActivity.this, KenyanNews.class);
             startActivity(intent);
         }
     }
