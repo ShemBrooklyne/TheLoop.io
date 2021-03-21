@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (view == mLogin) {
-            Intent intent = new Intent(MainActivity.this, KenyanNews.class);
+            Intent intent = new Intent(MainActivity.this, NavScreen.class);
             startActivity(intent);
         }
     }

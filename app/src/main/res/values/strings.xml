@@ -19,4 +19,8 @@
     <string name="tech_news">Tech</string>
     <string name="world_news">world</string>
     <string name="sports_news">sports</string>
+    <string name="explore">Explore</string>
+    <string name="categories">Categories</string>
+    <string name="business">Business</string>
+    <string name="health">Health</string>
 </resources>
