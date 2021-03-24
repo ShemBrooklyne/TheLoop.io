@@ -4,34 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".UI.NavScreen">
 
     <!-- android:numColumns=2 is the number of columns for Grid View
          android:horizontalSpacing is the space between horizontal
          grid items.-->
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="350dp"
-        android:layout_height="200dp"
-        android:background="@drawable/rounded_corners"
-        app:cardElevation="8dp"
+
+    <com.synnapps.carouselview.CarouselView
+        android:id="@+id/customCarouselView"
+        android:layout_width="match_parent"
+        android:layout_height="191dp"
+        app:disableAutoPlayOnUserInteraction="true"
+        app:fillColor="#FFFFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/scoreHeadline"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:pageColor="#00000000"
+        app:radius="6dp"
+        app:strokeColor="#FF777777"
+        app:strokeWidth="1dp" >
+
+    </com.synnapps.carouselview.CarouselView>
 
     <TextView
         android:id="@+id/scoreHeadline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
         android:fontFamily="@font/roboto_bold"
         android:padding="20dp"
         android:text="@string/categories"
         android:textSize="15.5sp"
         app:layout_constraintBottom_toTopOf="@+id/navGrid"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/navGrid"
